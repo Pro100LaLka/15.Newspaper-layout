@@ -108,7 +108,36 @@ h3 {
 }
 
 .cover-image img {
-  max-width: 100%;
+  max-width: min(100%, 50dvw);
   object-fit: cover;
   border-radius: 2rem;
+}
+
+@media only screen and (max-width: 720px) {
+  .newspaper-layout {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "title title"
+      "cover-image cover-image"
+      "feature-article feature-article"
+      "secondary-article secondary-article"
+      "small-article1 small-article2"
+      "small-article3 .";
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .newspaper-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "title"
+      "cover-image"
+      "feature-article"
+      "secondary-article"
+      "small-article1"
+      "small-article2"
+      "small-article3";
+  }
 }
