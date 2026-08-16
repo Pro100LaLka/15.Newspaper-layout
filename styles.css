@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: grid;
+  grid-template-columns:
+    minmax(2rem, 1fr)
+    minmax(min-content, 800px)
+    minmax(2rem, 1fr);
+}
+
+.newspaper-layout {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto repeat(3, 1fr);
+  grid-template-areas:
+    "title title title"
+    "feature-article feature-article cover-image"
+    "secondary-article secondary-article cover-image"
+    "small-article1 small-article2 small-article3";
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.title {
+  grid-area: title;
+  background-color: #1b1b32;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+article {
+  padding: 3rem 1.5rem;
+}
+
+.feature-article {
+  grid-area: feature-article;
+  background-color: #f9f9f9;
+}
+
+h2,
+h3,
+p {
+  text-align: justify;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.feature-article p,
+.secondary-article p {
+  font-size: 1.5rem;
+}
+
+.secondary-article {
+  grid-area: secondary-article;
+  background-color: #f9f9f9;
+}
+
+.small-article1 {
+  grid-area: small-article1;
+}
+
+.small-article2 {
+  grid-area: small-article2;
+}
+
+.small-article3 {
+  grid-area: small-article3;
+}
+
+.small-article {
+  background-color: #e9e9e9;
+}
+
+h3 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.small-article p {
+  font-size: 1.4rem;
+}
+
+.cover-image {
+  grid-area: cover-image;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.cover-image img {
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+}
